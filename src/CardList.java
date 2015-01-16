@@ -1,28 +1,37 @@
 // create class CardList
 import java.util.ArrayList;
 import java.util.Random;
-public class CardList{
-  private ArrayList Card cards;
-  private Random random=new Random();
-  public CardList(){
+public class CardList
+{
+  private ArrayList<Card>cards;
+  private Random random;
+  public CardList()
+  {
     cards=new ArrayList<Card>();
-    suit=random.nextInt(4);
-    rank=random.nextInt(cards.size());
+    random=new Random();
   }
-  public int size(){
+  public int size()
+  {
     return cards.size();
   }   
-  public void addCardToBottom(){
-    /*
-     * fields:
-     *   cards
-     *   random
-     * constructors:
-     *   cardList()
-     * accessors:
-     *   size()
-     * mutators:
-     *   addCardToBottom
-     *   addCardToTop
-     *   takeCardFromTop
-     *   removeRandomCard
+  public void addCardToBottom(Card card)
+  {
+    cards.add(card);
+  }
+  public void addCardToTop(Card card)
+  {
+    cards.add(0,card);
+  }
+  public Card takeCardFromTop()
+  {
+    return cards.get(0);
+  }
+  public Card removeRandomCard()
+  {
+    int rand=random.nextInt(cards.size());
+    Card card=cards.get(rand);
+    cards.remove(rand);
+    return card;
+  }
+}
+
