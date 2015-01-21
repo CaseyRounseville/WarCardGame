@@ -56,7 +56,14 @@ public class Card extends PlayingCard implements Comparable<Card>
     {
       suit="S";
     }
-    return rank+"-"+suit;
+    if(getRank()<=10&&getRank()!=1)
+    {
+      return getRank()+"-"+suit;
+    }
+    else
+    {
+      return rank+"-"+suit;
+    }
   }
 }
 
