@@ -7,9 +7,9 @@ public class CardDeck extends CardList
   public CardDeck()
   {
     super();
-    for(int rank=1;rank<ranks;rank++)
+    for(int rank=1;rank<=ranks;rank++)
     {
-      for(int suit=1;suit<suits;suit++)
+      for(int suit=1;suit<=suits;suit++)
       {
         addCardToBottom(new Card(suit,rank));
       }
